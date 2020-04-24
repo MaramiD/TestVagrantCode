@@ -1,6 +1,6 @@
 package TestCases;
 
-import org.testng.AssertJUnit;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -26,7 +26,7 @@ public class Scenarioe2Test extends TestBotBase{
 			                                    .selectFeaturedCollection()
 			                                    .clickAddToCart()
 			                                    .getAddedToCartMessage();
-	AssertJUnit.assertEquals(actualMessage, expectedMessage);
+	sa.assertEquals(actualMessage, expectedMessage);
 	sa.assertAll();
 }
 }

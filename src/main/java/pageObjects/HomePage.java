@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,10 +35,10 @@ public HomePage(WebDriver driver) {
 private WebElement search_Button_Xpath;
 @FindBy(how=How.XPATH,using="//input[@name='q']")
 private WebElement search_input_Xpath;
-@FindBy(how=How.XPATH,using="//div[@class='predictive-search']/ul/li/a")
+@FindBy(how=How.XPATH,using="//li[a[div[span[span[text()='RoundNeck Shirt 14']]]]]")
 private WebElement searchList_Dropdown_Xpath;
-@FindBy(how=How.XPATH,using="//div[@class='page-width']/ul/li[2]")
-private WebElement featuredCoolection_List_Xpath;
+@FindBy(how=How.XPATH,using="//div[@class='page-width']/ul/li")
+private List<WebElement> featuredCoolection_Item_Xpath;
 @FindBy(how=How.XPATH,using="//h2[text()='Optimus Ecom']")
 private WebElement scroll_Element1_Xpath;
 @FindBy(how=How.XPATH,using="//h2[text()='Customised Shirts']")
@@ -55,7 +57,7 @@ public ProductDetailsPage selectFeaturedCollection() {
 	pageWrapper.ScrollToElement(scroll_Element1_Xpath);
 	pageWrapper.ScrollToElement(scroll_Element2_Xpath);
 	pageWrapper.ScrollToElement(scroll_Element3_Xpath);
-	pageWrapper.click_Actions(featuredCoolection_List_Xpath);
+	pageWrapper.click_Actions(featuredCoolection_Item_Xpath.get(1));
 	return new ProductDetailsPage(driver);
 }
 }

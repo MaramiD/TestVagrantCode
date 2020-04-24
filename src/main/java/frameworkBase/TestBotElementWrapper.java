@@ -1,19 +1,6 @@
 package frameworkBase;
 
-import java.io.File;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.function.Function;
+
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.openqa.selenium.By;
@@ -69,34 +56,6 @@ public class TestBotElementWrapper {
  	    		element.sendKeys(text);
  	    	}
  		}
- 	   
- 	   public void enterText(WebElement element, String text) {
- 	    	if( isElementDisplayed(element))  { 
- 	    		
- 	    		element.sendKeys(text);
- 	    		element.sendKeys(Keys.ENTER);
- 	    	}
- 		}
- 		
- 	  /**
-   	 * Read text.
-   	 *
-   	 * @param element the element
-   	 * @return the string
-   	 */
-   	//Read Text
- 	    public String readText (WebElement element) {
- 	    	String text = null;
- 	    	
- 	    	if( isElementDisplayed(element)) {
- 	    		
- 	    		text = element.getText();
- 	    	}
-
- 	        return text;
- 	    }
- 	    
- 	    
  	    
  	   
      	/* ============================================ Commands using wait conditions ============================================ */
@@ -338,37 +297,9 @@ public class TestBotElementWrapper {
  		return true;
  	}
  	
- 	/* ============================================ END - Boolean Validatoins and Alerts ============================================ */
- 	
 
  	/* ============================================ START - Select Methods  ============================================ */
  	
- 	/**
- 	 * Gets the selected option.
- 	 *
- 	 * @param webElement the web element
- 	 * @return the selected option
- 	 */
- 	public String getSelectedOption(WebElement webElement) {
- 		
- 		 Select select = new Select(webElement);
- 		 return select.getFirstSelectedOption().getText();
- 	}
- 	
-
- 	/**
- 	 * Gets the drop down item text by index.
- 	 *
- 	 * @param webElement the web element
- 	 * @param index the index
- 	 * @return the drop down item text by index
- 	 */
- 	public String getDropDownItemTextByIndex(WebElement webElement,int index)
- 	{
- 		Select select = new Select(webElement);
- 		return select.getOptions().get(index).getText(); 
- 		
- 	}
  	
  	/**
  	 * Select by visible text.
@@ -497,20 +428,8 @@ public class TestBotElementWrapper {
  				}
  			}
  			
- 			 /**Clear Text*/
- 	        public void clearText(WebElement element) {
- 	       	if(isElementDisplayed(element)) {
- 	        		element.clear();
- 	       	}
- 	        }
- 	        
- 	        public void writeKeyboardText(WebElement element, Keys text) {
- 				// TODO Auto-generated method stub
- 		    	if( isElementDisplayed(element))  { 
- 		    		
- 		    		element.sendKeys(text);
- 		    	}
- 			}
+ 		
+ 	  
  			
  			
  			public  void ScrollToElement( WebElement element) {
@@ -527,9 +446,7 @@ public class TestBotElementWrapper {
  	//================================= Basic Selenium GET Methods =============================//
  	
  	
- 	public int getWebElementsCount(List<WebElement> webElements) {
- 		return webElements.size();
- 	}
+ 
  	
  	public String getText(WebElement webElement) {
  		return webElement.getText();
