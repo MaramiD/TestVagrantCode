@@ -1,6 +1,5 @@
 package frameworkBase;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
@@ -32,7 +31,6 @@ public class TestBotBase
 	public TestBotPageGenerator pageGenerator;
 	
 	/** The Constant CONFIG_FILENAME. */
-	//static File propFile = new File(System.getProperty("user.dir")+"//src//test//java/resources//config.properties");
 	private static final String CONFIG_FILENAME= "config";
 
 	
